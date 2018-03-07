@@ -11,7 +11,7 @@ apt-get update
 echo "Updated Packages"
 
 # Install Node JS
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 apt-get install -y nodejs
 echo "Installed Node JS"
 
@@ -32,14 +32,7 @@ sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
 service mysql restart
 echo "Installed MySQL"
 
-# Install Nginx
-# apt-get install -y nginx
-# cp /home/vagrant/www/vagrant/nginx /etc/nginx/sites-available/default
-# service nginx restart
-# echo "Installed Nginx"
-
 echo "All done"
 echo "Node version: " `node -v`
 echo "NPM version: " `npm -v`
 echo "MySQL Version: " `mysql --version`
-# echo "Nginx Version: " `nginx -v`
